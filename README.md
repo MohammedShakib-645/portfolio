@@ -2,7 +2,7 @@
 
 Welcome to my personal developer portfolio repository! This project showcases my academic journey, technical skills, certifications, and academic projects in a modern, dark-themed glassmorphic web interface. It also includes an interactive and print-ready resume page.
 
-🔗 **Live Portfolio**: [https://5645mohammedshakib.github.io/portfolio](https://5645mohammedshakib.github.io/portfolio) (or your deployed URL)
+🔗 **Live Portfolio**: [https://mohammedshakib-645.github.io/Portfolio/](https://mohammedshakib-645.github.io/Portfolio/)
 
 ---
 
@@ -12,7 +12,7 @@ Welcome to my personal developer portfolio repository! This project showcases my
 - **Location**: Hyderabad, Telangana, India
 - **Email**: [5645mohammedshakib@gmail.com](mailto:5645mohammedshakib@gmail.com)
 - **LinkedIn**: [linkedin.com/in/mohammed-shakib-56b28437a](https://linkedin.com/in/mohammed-shakib-56b28437a)
-- **GitHub**: [github.com/5645mohammedshakib](https://github.com/5645mohammedshakib)
+- **GitHub**: [github.com/MohammedShakib-645](https://github.com/MohammedShakib-645)
 
 > **Professional Summary**: Second-year B. Tech CSE (AI & ML) student with a strong foundation in C, Python, and Data Structures & Algorithms. Currently expanding into Java and full-stack web development. Seeking a Software Engineering Internship to contribute to impactful engineering teams.
 
@@ -100,7 +100,7 @@ Since this portfolio is built as a highly responsive, static site using vanilla 
 ### Option 1: Direct Execution
 1. Clone the repository:
    ```bash
-   git clone https://github.com/5645mohammedshakib/portfolio.git
+   git clone https://github.com/MohammedShakib-645/Portfolio.git
    ```
 2. Double-click [index.html](index.html) to open it directly in any web browser.
 
