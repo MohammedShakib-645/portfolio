@@ -19,6 +19,55 @@
     /* ── LIGHTNING FAST PERFORMANCE & DESIGN TOKENS ── */
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; touch-action: manipulation; }
 
+    /* ── CUSTOM GLOWING CURSOR ── */
+    @media (pointer: fine) {
+      /* Hide default cursor on desktop only */
+      html, body, a, button, [role="button"] { cursor: none !important; }
+    }
+
+    #cursor-dot {
+      position: fixed;
+      top: 0; left: 0;
+      width: 10px;
+      height: 10px;
+      background: var(--primary);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 999999;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary-glow);
+      transition: transform 0.05s ease, width 0.15s ease, height 0.15s ease, background 0.15s ease;
+    }
+
+    #cursor-ring {
+      position: fixed;
+      top: 0; left: 0;
+      width: 34px;
+      height: 34px;
+      border: 2px solid rgba(0,255,136,0.55);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 999998;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 12px var(--primary-glow);
+      transition: transform 0.12s ease, width 0.2s ease, height 0.2s ease, border-color 0.2s ease;
+    }
+
+    /* Cursor grows on hover over interactive elements */
+    body.cursor-hover #cursor-dot {
+      width: 16px;
+      height: 16px;
+      background: var(--cyan);
+      box-shadow: 0 0 18px var(--cyan), 0 0 35px var(--cyan-glow);
+    }
+    body.cursor-hover #cursor-ring {
+      width: 50px;
+      height: 50px;
+      border-color: var(--cyan);
+      box-shadow: 0 0 20px var(--cyan-glow);
+    }
+
+
     :root {
       --bg: #030712;
       --card-bg: rgba(11, 19, 41, 0.85);
@@ -1195,9 +1244,14 @@
 </head>
 <body>
 
+  <!-- Custom Glowing Cursor (Desktop Only) -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
   <!-- Glow Spotlights -->
   <div class="glow-spotlight-1"></div>
   <div class="glow-spotlight-2"></div>
+
 
   <!-- ── FAST INSTANT PRELOADER ── -->
   <div id="preloader">
@@ -1925,6 +1979,48 @@
       const subjectEncoded = encodeURIComponent(subject);
       window.location.href = 'mailto:5645mohammedshakib@gmail.com?subject=' + subjectEncoded + '&body=' + body;
     }
+
+    // ── CUSTOM GLOWING CURSOR TRACKER ──
+    const cursorDot  = document.getElementById('cursor-dot');
+    const cursorRing = document.getElementById('cursor-ring');
+
+    let mouseX = 0, mouseY = 0;
+    let ringX  = 0, ringY  = 0;
+
+    document.addEventListener('mousemove', function(e) {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      // Dot follows instantly
+      cursorDot.style.left = mouseX + 'px';
+      cursorDot.style.top  = mouseY + 'px';
+    });
+
+    // Ring follows with smooth lag via requestAnimationFrame
+    function animateRing() {
+      ringX += (mouseX - ringX) * 0.18;
+      ringY += (mouseY - ringY) * 0.18;
+      cursorRing.style.left = ringX + 'px';
+      cursorRing.style.top  = ringY + 'px';
+      requestAnimationFrame(animateRing);
+    }
+    animateRing();
+
+    // Grow cursor when hovering interactive elements
+    const hoverTargets = document.querySelectorAll('a, button, .stat-card, .skill-card, .project-card, .cert-card, .c-card, .achieve-card, .skill-pill, .timeline-card, img, .btn-primary, .btn-outline, .btn-hire, .btn-project');
+    hoverTargets.forEach(el => {
+      el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+      el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+    });
+
+    // Hide cursor when mouse leaves window
+    document.addEventListener('mouseleave', () => {
+      cursorDot.style.opacity  = '0';
+      cursorRing.style.opacity = '0';
+    });
+    document.addEventListener('mouseenter', () => {
+      cursorDot.style.opacity  = '1';
+      cursorRing.style.opacity = '1';
+    });
   </script>
 </body>
 </html>
