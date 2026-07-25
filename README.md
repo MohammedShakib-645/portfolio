@@ -2,7 +2,7 @@
 
 Welcome to my personal developer portfolio repository! This project showcases my academic journey, technical skills, certifications, and academic projects in a modern, dark-themed glassmorphic web interface. It also includes an interactive and print-ready resume page.
 
-🔗 **Live Portfolio**: [https://mohammedshakib-645.github.io/Portfolio/](https://mohammedshakib-645.github.io/Portfolio/)
+🔗 **Live Portfolio**: [https://mohammedshakib-645.github.io/portfolio/](https://mohammedshakib-645.github.io/portfolio/)
 
 ---
 
@@ -100,7 +100,7 @@ Since this portfolio is built as a highly responsive, static site using vanilla 
 ### Option 1: Direct Execution
 1. Clone the repository:
    ```bash
-   git clone https://github.com/MohammedShakib-645/Portfolio.git
+   git clone https://github.com/MohammedShakib-645/portfolio.git
    ```
 2. Double-click [index.html](index.html) to open it directly in any web browser.
 
