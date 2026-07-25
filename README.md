@@ -66,7 +66,7 @@ Welcome to my personal developer portfolio repository! This project showcases my
 
 - Secured an SGPA of **8.05** in B.Tech 1st Year 1st Sem (1st Year 2nd Sem result awaited, currently studying in 3rd Sem).
 - Secured a CGPA of **9.4** in Intermediate (MPC).
-- Completed Data Structures & Algorithms coursework with a strong understanding of core concepts.
+- Currently learning and actively practicing Data Structures & Algorithms to build a strong foundation in core computer science.
 - Built and delivered multiple academic projects using C and Python.
 - Earned **16 professional certifications** in AI, Operating Systems, Python, and Sustainability.
 
