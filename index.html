@@ -1011,7 +1011,32 @@
       color: var(--text-muted);
     }
 
-    /* ── 100% RESPONSIVE ADAPTABILITY FOR MOBILE & ALL SCREENS ── */
+    /* ── GLOBAL CLICK / TOUCH RIPPLE BURST ── */
+    .ripple-burst {
+      position: fixed;
+      pointer-events: none;
+      border-radius: 50%;
+      width: 0px;
+      height: 0px;
+      background: radial-gradient(circle, rgba(0,255,136,0.55) 0%, rgba(0,240,255,0.25) 50%, transparent 70%);
+      transform: translate(-50%, -50%) scale(0);
+      animation: ripplePop 0.38s ease-out forwards;
+      z-index: 99999;
+    }
+
+    @keyframes ripplePop {
+      0%   { width: 0px; height: 0px; opacity: 1; transform: translate(-50%, -50%) scale(0); }
+      60%  { opacity: 0.9; }
+      100% { width: 180px; height: 180px; opacity: 0; transform: translate(-50%, -50%) scale(1); }
+    }
+
+    /* Blink flash on interactive elements */
+    .blink-active {
+      filter: brightness(1.8) saturate(1.5) !important;
+      transform: scale(0.96) !important;
+      transition: filter 0.06s ease, transform 0.06s ease !important;
+    }
+
     @media (max-width: 900px) {
       section { padding: 90px 4% 50px; }
       .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -1712,20 +1737,37 @@
       });
     });
 
-    // Touch Ripple / Instant Blink Reaction Effect for Touch devices
-    document.querySelectorAll('.btn-primary, .btn-outline, .btn-hire, .btn-project, .stat-card, .skill-card, .project-card, .cert-card, .c-card').forEach(el => {
-      el.addEventListener('touchstart', function() {
-        this.style.filter = 'brightness(1.5) contrast(1.2)';
-        this.style.transform = 'scale(0.95)';
-      }, {passive: true});
+    // ── GLOBAL CLICK / TOUCH BLINK + RIPPLE on EVERY element ──
+    function spawnRipple(x, y) {
+      const r = document.createElement('div');
+      r.className = 'ripple-burst';
+      r.style.left = x + 'px';
+      r.style.top  = y + 'px';
+      document.body.appendChild(r);
+      setTimeout(() => r.remove(), 400);
+    }
 
-      el.addEventListener('touchend', function() {
-        setTimeout(() => {
-          this.style.filter = '';
-          this.style.transform = '';
-        }, 120);
-      }, {passive: true});
-    });
+    // Mouse click ripple (Desktop)
+    document.addEventListener('click', function(e) {
+      spawnRipple(e.clientX, e.clientY);
+      const el = e.target.closest('a, button, .stat-card, .skill-card, .project-card, .cert-card, .c-card, .achieve-card, .timeline-card, .skill-pill, img, h1, h2, h3, p, span');
+      if (el) {
+        el.classList.add('blink-active');
+        setTimeout(() => el.classList.remove('blink-active'), 180);
+      }
+    }, {passive: true});
+
+    // Touch ripple (Mobile / Tablet)
+    document.addEventListener('touchstart', function(e) {
+      const t = e.touches[0];
+      spawnRipple(t.clientX, t.clientY);
+      const el = e.target.closest('a, button, .stat-card, .skill-card, .project-card, .cert-card, .c-card, .achieve-card, .timeline-card, .skill-pill, img, h1, h2, h3, p, span');
+      if (el) {
+        el.classList.add('blink-active');
+        setTimeout(() => el.classList.remove('blink-active'), 180);
+      }
+    }, {passive: true});
+
 
     // JS-powered Contact Form - No browser security warning
     function sendContactMail() {
