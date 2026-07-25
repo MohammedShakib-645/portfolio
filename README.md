@@ -14,7 +14,7 @@ Welcome to my personal developer portfolio repository! This project showcases my
 - **LinkedIn**: [linkedin.com/in/mohammed-shakib-56b28437a](https://linkedin.com/in/mohammed-shakib-56b28437a)
 - **GitHub**: [github.com/MohammedShakib-645](https://github.com/MohammedShakib-645)
 
-> **Professional Summary**: Second-year B. Tech CSE (AI & ML) student with a strong foundation in C, Python, and Data Structures & Algorithms. Currently expanding into Java and full-stack web development. Seeking a Software Engineering Internship to contribute to impactful engineering teams.
+> **Professional Summary**: Currently in 2nd Year (3rd Semester) B.Tech CSE (AI & ML) student actively learning and practicing C, Python, Data Structures & Algorithms, and Web Development. 1st Year 1st Sem SGPA: 8.05 (2nd Sem result awaited). Seeking a Software Engineering Internship to contribute to impactful engineering teams.
 
 ---
 
@@ -89,7 +89,7 @@ Welcome to my personal developer portfolio repository! This project showcases my
 13. **Graphic Design Essentials** — Canva (2025)
 14. **Cloud Foundations Associate** — Oracle (2025)
 15. **IoT Network Specialist** — Cisco (2025)
-16. **AI For All** — Intel (2025)
+16. **AI For 
 
 ---
 
