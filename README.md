@@ -22,7 +22,7 @@ Welcome to my personal developer portfolio repository! This project showcases my
 
 * **Bachelor of Technology (B. Tech) — Computer Science Engineering (AI & ML)** | *2025 – 2029*
   - Sphoorthy Engineering College, JNTUH, Hyderabad
-  - **CGPA**: 8.05 | Currently in Second Year
+  - **1st Sem SGPA**: 8.05 (2nd Sem Result Awaited) | Currently in 2nd Year (3rd Sem)
 * **Intermediate (MPC)** | *2023 – 2025*
   - Sri Chandra Junior College
   - **CGPA**: 9.4
@@ -64,7 +64,7 @@ Welcome to my personal developer portfolio repository! This project showcases my
 
 ## 🏆 Key Achievements
 
-- Achieved a CGPA of **8.05** in the first year of B. Tech CSE (AI & ML).
+- Secured an SGPA of **8.05** in B.Tech 1st Year 1st Sem (1st Year 2nd Sem result awaited, currently studying in 3rd Sem).
 - Secured a CGPA of **9.4** in Intermediate (MPC).
 - Completed Data Structures & Algorithms coursework with a strong understanding of core concepts.
 - Built and delivered multiple academic projects using C and Python.
