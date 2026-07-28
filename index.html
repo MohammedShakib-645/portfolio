@@ -835,75 +835,141 @@
       margin-top: 3px;
     }
 
-    /* &#9472;&#9472; EDUCATION TIMELINE &#9472;&#9472; */
-    .timeline {
+    /* &#9472;&#9472; EDUCATION CARDS NEW DESIGN &#9472;&#9472; */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    .edu-card {
       position: relative;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 18px; top: 0; bottom: 0;
-      width: 2px;
-      background: var(--border);
-    }
-
-    .timeline-item {
-      position: relative;
-      padding-left: 50px;
-      margin-bottom: 2rem;
-    }
-
-    .timeline-dot {
-      position: absolute;
-      left: 11px; top: 4px;
-      width: 16px; height: 16px;
-      border-radius: 50%;
-      background: var(--primary);
-      box-shadow: 0 0 10px var(--primary);
-      border: 3px solid var(--bg);
-    }
-
-    .timeline-card {
       background: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 1.5rem;
-      backdrop-filter: blur(12px);
+      border-radius: var(--radius-lg, 16px);
+      padding: 2rem 1.6rem 1.6rem;
+      backdrop-filter: blur(16px);
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
     }
-
-    .timeline-degree {
-      font-family: var(--font-heading);
-      font-size: 1.18rem;
-      font-weight: 800;
-      color: #fff;
-      margin-bottom: 3px;
+    .edu-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--cyan));
+      border-radius: inherit;
     }
-
-    .timeline-major {
+    .edu-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--primary);
+      box-shadow: 0 24px 56px rgba(0,0,0,0.45), 0 0 30px rgba(0,255,136,0.13);
+    }
+    .edu-card-current {
+      border-color: rgba(0,255,136,0.28);
+      box-shadow: 0 4px 30px rgba(0,255,136,0.07);
+    }
+    .edu-status-badge {
+      position: absolute;
+      top: 1.1rem; right: 1.1rem;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      padding: 3px 10px;
+      border-radius: 20px;
       font-family: var(--font-mono);
-      font-size: 0.85rem;
-      color: var(--cyan);
-      margin-bottom: 6px;
+      text-transform: uppercase;
     }
-
-    .timeline-inst {
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      margin-bottom: 6px;
-    }
-
-    .timeline-details {
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
+    .edu-status-badge.current {
+      background: rgba(0,255,136,0.13);
       color: var(--primary);
-      background: rgba(0, 255, 136, 0.08);
-      display: inline-block;
-      padding: 4px 10px;
+      border: 1px solid rgba(0,255,136,0.3);
+    }
+    .edu-status-badge.done {
+      background: rgba(0,196,255,0.1);
+      color: var(--cyan);
+      border: 1px solid rgba(0,196,255,0.22);
+    }
+    .edu-icon-wrap {
+      font-size: 2.4rem;
+      margin-bottom: 0.5rem;
+      line-height: 1;
+    }
+    .edu-year {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      opacity: 0.65;
+      margin-bottom: 0.55rem;
+      letter-spacing: 0.04em;
+    }
+    .edu-degree-title {
+      font-family: var(--font-heading);
+      font-size: 1.22rem;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 0.3rem;
+      line-height: 1.2;
+    }
+    .edu-major-text {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: var(--cyan);
+      margin-bottom: 0.45rem;
+      line-height: 1.4;
+    }
+    .edu-inst-text {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+    .edu-loc-text {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      opacity: 0.6;
+      margin-bottom: 1.2rem;
+    }
+    .edu-score-section {
+      margin-top: auto;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+    .edu-score-label-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+      margin-bottom: 0.45rem;
+      color: var(--text-muted);
+    }
+    .edu-score-num {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: var(--primary);
+    }
+    .edu-bar-track {
+      height: 7px;
+      background: rgba(255,255,255,0.06);
       border-radius: 4px;
-      border: 1px solid var(--border-active);
+      overflow: hidden;
+      margin-bottom: 0.4rem;
+    }
+    .edu-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--primary), var(--cyan));
+      border-radius: 4px;
+      box-shadow: 0 0 10px rgba(0,255,136,0.45);
+      transition: width 1.4s cubic-bezier(0.4,0,0.2,1);
+    }
+    .edu-score-note {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      opacity: 0.55;
+      font-style: italic;
     }
 
     /* &#9472;&#9472; ACHIEVEMENTS SECTION &#9472;&#9472; */
@@ -1756,36 +1822,63 @@
         <div class="title-line"></div>
       </div>
 
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <h3 class="timeline-degree">Bachelor of Technology (B. Tech)</h3>
-            <div class="timeline-major">Computer Science Engineering (AI & ML)</div>
-            <div class="timeline-inst">Sphoorthy Engineering College, JNTUH, Hyderabad (2025 &#8211; 2029)</div>
-            <div class="timeline-details">1st Sem SGPA: 8.05 (2nd Sem Awaited) | Currently in 2nd Year (3rd Sem)</div>
+      <div class="edu-grid">
+
+        <!-- B.Tech Card -->
+        <div class="edu-card edu-card-current">
+          <div class="edu-status-badge current">&#128205; Current</div>
+          <div class="edu-icon-wrap">&#127979;</div>
+          <div class="edu-year">2025 &#8211; 2029</div>
+          <h3 class="edu-degree-title">Bachelor of Technology</h3>
+          <div class="edu-major-text">Computer Science Engineering<br/>(Artificial Intelligence &amp; ML)</div>
+          <div class="edu-inst-text">Sphoorthy Engineering College, JNTUH</div>
+          <div class="edu-loc-text">&#128205; Hyderabad, Telangana</div>
+          <div class="edu-score-section">
+            <div class="edu-score-label-row">
+              <span>SGPA &#8212; 1st Semester</span>
+              <span class="edu-score-num">8.05 / 10</span>
+            </div>
+            <div class="edu-bar-track"><div class="edu-bar-fill" data-val="80.5"></div></div>
+            <div class="edu-score-note">&#9711; 2nd Sem results awaited &bull; Currently in 3rd Sem</div>
           </div>
         </div>
 
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <h3 class="timeline-degree">Intermediate (MPC)</h3>
-            <div class="timeline-major">Maths, Physics, Chemistry</div>
-            <div class="timeline-inst">Sri Chandra Junior College (2023 &#8211; 2025)</div>
-            <div class="timeline-details">CGPA: 9.4</div>
+        <!-- Intermediate Card -->
+        <div class="edu-card">
+          <div class="edu-status-badge done">&#10003; Completed</div>
+          <div class="edu-icon-wrap">&#128218;</div>
+          <div class="edu-year">2023 &#8211; 2025</div>
+          <h3 class="edu-degree-title">Intermediate (MPC)</h3>
+          <div class="edu-major-text">Maths, Physics &amp; Chemistry</div>
+          <div class="edu-inst-text">Sri Chandra Junior College</div>
+          <div class="edu-loc-text">&#128205; Hyderabad, Telangana</div>
+          <div class="edu-score-section">
+            <div class="edu-score-label-row">
+              <span>CGPA</span>
+              <span class="edu-score-num">9.4 / 10</span>
+            </div>
+            <div class="edu-bar-track"><div class="edu-bar-fill" data-val="94"></div></div>
           </div>
         </div>
 
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <h3 class="timeline-degree">Secondary School (SSC)</h3>
-            <div class="timeline-major">General Studies</div>
-            <div class="timeline-inst">Standard High School (2022 &#8211; 2023)</div>
-            <div class="timeline-details">CGPA: 8.2</div>
+        <!-- SSC Card -->
+        <div class="edu-card">
+          <div class="edu-status-badge done">&#10003; Completed</div>
+          <div class="edu-icon-wrap">&#127979;</div>
+          <div class="edu-year">2022 &#8211; 2023</div>
+          <h3 class="edu-degree-title">Secondary School (SSC)</h3>
+          <div class="edu-major-text">General Studies</div>
+          <div class="edu-inst-text">Standard High School</div>
+          <div class="edu-loc-text">&#128205; Hyderabad, Telangana</div>
+          <div class="edu-score-section">
+            <div class="edu-score-label-row">
+              <span>CGPA</span>
+              <span class="edu-score-num">8.2 / 10</span>
+            </div>
+            <div class="edu-bar-track"><div class="edu-bar-fill" data-val="82"></div></div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -2031,6 +2124,20 @@
       cursorDot.style.opacity  = '1';
       cursorRing.style.opacity = '1';
     });
+
+    // &#9472;&#9472; EDUCATION SCORE BARS ANIMATION ON SCROLL &#9472;&#9472;
+    const eduObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.edu-bar-fill').forEach(bar => {
+            const val = bar.getAttribute('data-val');
+            bar.style.width = val + '%';
+          });
+          eduObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('.edu-card').forEach(card => eduObserver.observe(card));
   </script>
 </body>
 </html>
