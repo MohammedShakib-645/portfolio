@@ -148,7 +148,7 @@
     .hero-meta-item i { color:var(--green); font-size:.8rem; }
     .hero-btns { display:flex; flex-wrap:wrap; gap:1rem; }
     .btn-primary {
-      background:linear-gradient(135deg,var(--green),#00cc6e); color:#020510; font-weight:700; font-size:.92rem;
+      background:linear-gradient(135deg,var(--green),#5b21b6); color:#020510; font-weight:700; font-size:.92rem;
       padding:12px 28px; border-radius:50px; box-shadow:0 0 20px var(--green-glow);
       display:inline-flex; align-items:center; gap:8px; transition:all .2s;
     }
@@ -297,7 +297,7 @@
     .form-group input,.form-group textarea { background:rgba(255,255,255,0.04); border:1px solid var(--border); border-radius:10px; padding:.75rem 1rem; color:var(--text); font-family:var(--sans); font-size:.9rem; transition:border-color .2s,box-shadow .2s; outline:none; resize:vertical; }
     .form-group input:focus,.form-group textarea:focus { border-color:var(--border-g); box-shadow:0 0 0 3px var(--green-glow); }
     .form-group textarea { min-height:120px; }
-    .form-submit { width:100%; background:linear-gradient(135deg,var(--green),#00cc6e); color:#020510; font-weight:700; font-size:.95rem; padding:12px 24px; border-radius:50px; box-shadow:0 0 18px var(--green-glow); transition:all .2s; display:flex; align-items:center; justify-content:center; gap:8px; }
+    .form-submit { width:100%; background:linear-gradient(135deg,var(--green),#5b21b6); color:#020510; font-weight:700; font-size:.95rem; padding:12px 24px; border-radius:50px; box-shadow:0 0 18px var(--green-glow); transition:all .2s; display:flex; align-items:center; justify-content:center; gap:8px; }
     .form-submit:hover { transform:translateY(-2px); box-shadow:0 6px 28px var(--green-glow); }
 
     footer { position:relative; z-index:1; border-top:1px solid var(--border); padding:2.5rem 5%; text-align:center; }
@@ -773,7 +773,7 @@
     e.preventDefault();
     const btn=document.getElementById('submit-btn');
     btn.innerHTML='<i class="fas fa-check"></i> Message Sent!';
-    btn.style.background='linear-gradient(135deg,#00cc6e,#7c3aed)';
+    btn.style.background='linear-gradient(135deg,#5b21b6,#7c3aed)';
     btn.disabled=true;
     setTimeout(()=>{
       btn.innerHTML='<i class="fas fa-paper-plane"></i> Send Message';
@@ -784,4 +784,5 @@
 </script>
 </body>
 </html>
+
 
